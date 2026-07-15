@@ -14,7 +14,7 @@ class ConsoleView:
     def prompt_task_id(self) -> int:
         return int(input("Task ID > ").strip())
 
-    def show_tasks(self, tasks) -> None:
+    def show_tasks(self, tasks: list) -> None:
         if not tasks:
             print("등록된 Task가 없습니다.")
             return

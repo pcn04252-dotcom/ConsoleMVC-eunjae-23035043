@@ -54,3 +54,9 @@ tests/
 
 - 최초 작성 및 MVC 구조 구현 완료
 - Harness 도입: `pyproject.toml`(pytest/ruff 설정), `requirements-dev.txt`(pytest, ruff), GitHub Actions CI(`.github/workflows/ci.yml`) 추가 — push/PR마다 린트+테스트 자동 실행. `ruff check` 결과 이슈 없음(Clean Code 확인).
+- **최종 코드 리뷰 후 수정**: 독립 에이전트 리뷰에서 발견된 실사용 버그 3건 수정.
+  - `TaskRepository.add()`가 빈/공백 제목을 그대로 저장하던 문제 → 검증 추가(`ValueError`).
+  - `TaskController.run()`이 입력 스트림 종료(EOF) 시 `EOFError`로 크래시하던 문제 → 루프에서 캐치해 정상 종료하도록 수정.
+  - `_handle_toggle`/`_handle_delete`의 중복된 예외 처리를 `_read_task_id()` 헬퍼로 통합하고, 형식 오류(숫자 아님)와 존재하지 않는 ID 오류 메시지를 구분.
+  - README/CI에서 누락됐던 `ruff check .` 안내 추가, `.github/workflows/ci.yml`의 중복된 `pip install ruff` 라인 제거.
+  - 테스트 6개 → 7개 (빈 제목 검증 테스트 추가).

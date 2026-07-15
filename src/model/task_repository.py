@@ -7,6 +7,8 @@ class TaskRepository:
         self._next_id = 1
 
     def add(self, title: str) -> Task:
+        if not title.strip():
+            raise ValueError("제목은 비어 있을 수 없습니다.")
         task = Task(id=self._next_id, title=title)
         self._tasks[task.id] = task
         self._next_id += 1

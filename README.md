@@ -17,6 +17,7 @@ python -m src.main
 ```
 pip install -r requirements-dev.txt
 pytest
+ruff check .
 ```
 
 ## 검증한 것

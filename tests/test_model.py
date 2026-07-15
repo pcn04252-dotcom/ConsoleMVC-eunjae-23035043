@@ -12,6 +12,12 @@ def test_add_creates_task_with_incrementing_id():
     assert first.done is False
 
 
+def test_add_rejects_blank_title():
+    repo = TaskRepository()
+    with pytest.raises(ValueError):
+        repo.add("   ")
+
+
 def test_list_returns_all_added_tasks():
     repo = TaskRepository()
     repo.add("a")
