@@ -49,3 +49,8 @@ tests/
 ## 7. 미결정/추후 논의 사항
 
 - (없음, 발견 시 추가)
+
+## 8. 변경 이력
+
+- 최초 작성 및 MVC 구조 구현 완료
+- Harness 도입: `pyproject.toml`(pytest/ruff 설정), `requirements-dev.txt`(pytest, ruff), GitHub Actions CI(`.github/workflows/ci.yml`) 추가 — push/PR마다 린트+테스트 자동 실행. `ruff check` 결과 이슈 없음(Clean Code 확인).
