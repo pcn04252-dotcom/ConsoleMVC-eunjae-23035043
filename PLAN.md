@@ -31,11 +31,11 @@ tests/
 
 ## 5. 구현 단계
 
-- [ ] 1단계 - `model`: `Task` dataclass, `TaskRepository`(add/list/toggle_done/delete) 구현. I/O 코드 없음.
-- [ ] 2단계 - `view`: `ConsoleView` 구현 (메뉴 출력, 입력 수집, 목록/결과 렌더링). Model을 import하지 않음.
-- [ ] 3단계 - `controller`: `TaskController` 구현. 메뉴 루프에서 View로부터 입력을 받아 Model 메서드 호출 후 결과를 View로 전달.
-- [ ] 4단계 - `main.py`: Model/View/Controller 조립 및 실행.
-- [ ] 5단계 - `tests/test_model.py`: Model 단위 테스트 (pytest, I/O 없이 순수 로직만 검증).
+- [x] 1단계 - `model`: `Task` dataclass, `TaskRepository`(add/list/toggle_done/delete) 구현. I/O 코드 없음.
+- [x] 2단계 - `view`: `ConsoleView` 구현 (메뉴 출력, 입력 수집, 목록/결과 렌더링). Model을 import하지 않음.
+- [x] 3단계 - `controller`: `TaskController` 구현. 메뉴 루프에서 View로부터 입력을 받아 Model 메서드 호출 후 결과를 View로 전달.
+- [x] 4단계 - `main.py`: Model/View/Controller 조립 및 실행. Windows 콘솔 cp949 한글 깨짐 방지를 위해 stdout/stdin을 UTF-8로 재설정.
+- [x] 5단계 - `tests/test_model.py`: Model 단위 테스트 (pytest, I/O 없이 순수 로직만 검증). 6개 테스트 통과.
 
 ## 6. 완료 기준 (Definition of Done)
 

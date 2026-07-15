@@ -44,3 +44,4 @@ pytest
 ## 주의사항
 
 - 이 repo는 PoC이므로 반도체 시료 도메인과 무관한 임의 도메인(Task)을 사용한다. 도메인 자체보다 MVC 경계 검증이 목적이다.
+- Windows 콘솔 기본 코드페이지(cp949)에서 한글 출력이 깨지는 문제가 있어, `main.py`에서 `sys.stdout.reconfigure(encoding="utf-8")` / `sys.stdin.reconfigure(encoding="utf-8")`로 고정한다. 이 패턴은 콘솔 출력이 있는 다른 repo(특히 SampleOrderSystem)에도 동일하게 적용해야 한다.
